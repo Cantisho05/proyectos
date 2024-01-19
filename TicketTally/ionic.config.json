@@ -1,0 +1,7 @@
+{
+  "name": "TicketTally",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
