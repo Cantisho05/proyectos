@@ -1,9 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      cinemas Procinal
-    </ion-title>
-  </ion-toolbar>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -18,22 +14,31 @@
   [loop]="true"
   [pagination]="true"
   [sLidesPerView]="2">
+
+
   <swiper-slide>
-    <p> ¡Bienvenido a tu destino cinematográfico definitivo! </p>
+    <h1> BIENVENIDO A TU DESTINO CINEMATOGRAFICO </h1>
     <p> Sumérgete en un universo de historias infinitas y experiencias inigualables. </p>
-    <p> ¿Que te gustaria ver hoy? </p>
-
-    <a href="intro.html">
-      <img src="https://www.cineland.co/images/Proximos_estrenos/themarvels.jpg" alt="THE MARVELS" width="162" height="240">
-  </a>
-
+    <h3> ¿Que te gustaria ver hoy? </h3>
+    <a><img src="../../assets/imagenes/wonka.jpg" alt="WONKA" width="162" height="240"></a>
+    <p> Desliza para continuar -> </p>
   </swiper-slide>
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide>
-  </swiper-container>
 
+    
+  <swiper-slide>
+    <h1> MISIÓN </h1>
+    <a> <img src="../../assets/imagenes/cine.jpg" width="162" height="240"></a> 
+    <p> Ofrecer una plataforma digital que celebre y promueva la magia del cine, proporcionando a los amantes del séptimo arte un espacio donde puedan descubrir, explorar y conectarse con películas de diversas épocas, géneros y culturas. Nuestra misión es compartir la pasión por el cine mediante reseñas, análisis profundos, noticias frescas y contenido exclusivo, inspirando a una comunidad global a apreciar, reflexionar y disfrutar del arte cinematográfico en todas sus formas.</p>
+    <p> Desliza para continuar -> </p>
+    </swiper-slide>
+
+    
+    <swiper-slide>
+      <h1> COMENCEMOS </h1>
+      <p> Haz clic aquí para conocer más </p>
+      <ion-button> VAMOS A POR TU TICKET! </ion-button>
+    </swiper-slide>
+
+    
+  </swiper-container>
 </ion-content>
