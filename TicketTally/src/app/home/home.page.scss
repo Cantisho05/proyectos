@@ -1,41 +1,40 @@
 #container {
   text-align: center;
-  background-color: #ffffff; /* Cambiado a blanco */
-  padding: 20px;
-  border-radius: 10px; /* Añadido un borde redondeado */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadida una sombra sutil */
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-#container h1 {
-  text-align: center;
-  font-size: 24px;
-  color: #336699;
+#container strong {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 #container p {
-  text-align: center;
   font-size: 16px;
   line-height: 22px;
-  color: #333;
-  margin: 10px 0;
+
+  color: #da0101;
+
+  margin: 0;
 }
 
 #container a {
-  text-align: center;
   text-decoration: none;
 }
 
-#reservarButtonContainer {
-  text-align: center;
-  margin-top: 20px;
+swiper-container {
+  width: 100%;
+  height: 100%;
 }
-
-#reservarButton {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #da0101;
-  color: #fff;
-  border: 2px solid #da0101;
-  border-radius: 5px;
-  text-decoration: none;
+ 
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
