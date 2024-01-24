@@ -23,8 +23,9 @@
     <img *ngIf="i === 0 || i === 1" src={{slide.image}}>
     <p> {{slide.texto_ayuda}} </p>
 
- <ion-button (click)="goToHome()" *ngIf="i==2"> Vamos a por el ticket! </ion-button>
- <ion-button class="omitir" (click)="goToHome()" *ngIf="i==0"> OMITIR </ion-button>
+ <ion-button (click)="iralHome()" *ngIf="i==2"> Vamos a por el ticket! </ion-button>
+
+ <ion-button class="omitir" (click)="omitir()" *ngIf="i==0"> OMITIR </ion-button>
 
     </swiper-slide>
   

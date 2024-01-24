@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements OnInit {
+export class IntroPage{
 
   slides = [
     {
@@ -33,13 +34,33 @@ export class IntroPage implements OnInit {
     }
   ]
 
-  constructor(private router: Router) { }
+  constructor( 
+    private router: Router, 
+    private storage: Storage 
+    ) { }
 
-  goToHome(){
-    console.log("go To Home");
-    this.router.navigateByUrl('/home');
-  }
-  ngOnInit() {
-  }
-
+    async ionViewDidEnter() {
+      console.log("BIENVENIDO A TICKETTALLY");
+      const mostreIntro = await this.storage.get('mostreLaIntro');
+      if (mostreIntro) {
+         console.log("Ya esta viendo");
+        this.router.navigateByUrl('/intro');
+      } else {
+         console.log("Aun no has visto la intro");
+      }
+    }
+  
+    async marcarIntroComoVista() {
+      await this.storage.set('mostreLaIntro', true);
+      this.router.navigateByUrl('/home');
+    }
+  
+    iralHome(){
+      console.log("Ya esta viendo el homeeee");
+      this.marcarIntroComoVista();
+    }
+  
+    omitir(){
+      this.marcarIntroComoVista();
+    }
 }

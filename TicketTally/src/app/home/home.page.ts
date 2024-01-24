@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {Storage } from '@ionic/storage-angular';
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -8,16 +8,14 @@ import {Storage } from '@ionic/storage-angular';
 })
 export class HomePage {
 
- 
-
   constructor(
     private router: Router,
     private storage: Storage
     ) {}
- 
+  
   goToIntro(){
-    console.log("go to intro");
+    console.log("Ahora vamos a la intro ");
     this.router.navigateByUrl('/intro');
-    this.storage.set('MostreLaIntro', true);
+    this.storage.set('mostreLaIntro', false);
   }
 }
