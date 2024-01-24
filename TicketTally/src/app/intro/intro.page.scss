@@ -60,8 +60,16 @@ swiper-container {
     --padding-bottom: 2vh;
     color: rgb(255, 255, 255);
     
+    position:absolute;
+    top: 130vw;
     width: 70vw;
-    height: 60vw;
     font-size: 16px;
     
+}
+.texto_ayuda{
+  position:absolute;
+  top: 140vw;
+  font-family:Verdana;
+  color: #7f828a;
+  text-align: center;
 }
