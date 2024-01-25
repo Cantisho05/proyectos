@@ -1,0 +1,32 @@
+ion-content {
+    --background: #000000; /* Fondo blanco */
+  }
+  
+  ion-avatar.center-avatar {
+    margin: auto;
+  }
+  
+  .logo {
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    height: 150px; /* Ajusta el tamaño según sea necesario */
+  }
+  
+  ion-item {
+    padding: 10px;
+    --border-radius: 35px;
+  }
+  
+  ion-button {
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+.validation-message{
+  font-weight: bold;
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}

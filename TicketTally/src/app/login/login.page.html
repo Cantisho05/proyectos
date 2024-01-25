@@ -1,0 +1,43 @@
+<ion-header >
+</ion-header>
+
+<ion-content >
+  <figure class="ion-text-center">
+      <img src="../../assets/imagenes/User.png" alt="logo" class="logo">
+  </figure>
+    
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    
+    <ion-item>
+      <ion-input 
+      label="Correo Electrónico"
+       labelPlacement="floating"
+        placeholder="email@ejemplo.com"
+         formControlName="email"
+         [clearInput]="true"
+         ></ion-input>
+    </ion-item>
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div *ngIf="
+        (loginForm.get('email')?.hasError(validation.type) && 
+        loginForm.get('email')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div>
+    
+    <ion-item>
+      <ion-input label=" Contraseña " labelPlacement="floating"  type="password" ></ion-input>
+    </ion-item> 
+    
+    <ion-button 
+    size="default"
+    type="submit" 
+    [disabled]="!loginForm.valid"
+    color="tertiary"
+    shape="round"
+    expand="full"
+    >Login</ion-button>
+
+  </form>
+</ion-content>
