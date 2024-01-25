@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +17,12 @@ export class LoginPage implements OnInit {
       {type: "pattern", message: " El email ingresado es valido "}
     ]
   }
-  constructor(private formBuilder: FormBuilder) { 
+  loginMessage: any;
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private navCtrl: NavController
+    ) { 
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
         "",
@@ -31,6 +39,12 @@ export class LoginPage implements OnInit {
   }
 login(login_data: any){
   console.log((login_data));
+  this.authService.loginUser(login_data).then(res => {
+      this.loginMessage = res;
+      this.navCtrl.navigateForward('/home');
+  }).catch(err => {
+    this.loginMessage = err;
+  });
 }
   
   

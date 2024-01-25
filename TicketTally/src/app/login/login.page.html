@@ -25,7 +25,8 @@
         ">{{validation.message}}</div>
       </ng-container>
     </div>
-    
+
+    <!-- Crear validaciones en pantalla -->
     <ion-item>
       <ion-input label=" Contraseña " labelPlacement="floating"  type="password" ></ion-input>
     </ion-item> 
@@ -40,4 +41,7 @@
     >Login</ion-button>
 
   </form>
+  <div class="validation-message">
+    {{loginMessage}}
+  </div>
 </ion-content>
