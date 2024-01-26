@@ -1,47 +1,59 @@
-<ion-header >
+<ion-header>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <figure class="ion-text-center">
-      <img src="../../assets/imagenes/User.png" alt="logo" class="logo">
+    <img src="../../assets/imagenes/User.png" alt="logo" class="logo">
   </figure>
-    
-  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-    
-    <ion-item>
-      <ion-input 
-      label="Correo Electrónico"
-       labelPlacement="floating"
-        placeholder="email@ejemplo.com"
-         formControlName="email"
-         [clearInput]="true"
-         ></ion-input>
-    </ion-item>
-    <div class="validation-message">
-      <ng-container *ngFor="let validation of validation_messages.email">
-        <div *ngIf="
-        (loginForm.get('email')?.hasError(validation.type) && 
-        loginForm.get('email')?.dirty)
-        ">{{validation.message}}</div>
-      </ng-container>
-    </div>
 
-    <!-- Crear validaciones en pantalla -->
-    <ion-item>
-      <ion-input label=" Contraseña " labelPlacement="floating"  type="password" ></ion-input>
-    </ion-item> 
-    
-    <ion-button 
-    size="default"
-    type="submit" 
-    [disabled]="!loginForm.valid"
-    color="tertiary"
-    shape="round"
-    expand="full"
-    >Login</ion-button>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+
+    <ion-item [class.invalid]="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty)">
+      <ion-label position="floating"> Correo Electronico </ion-label>
+      <ion-input
+        placeholder="email@ejemplo.com"
+        formControlName="email"
+        [clearInput]="true"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="loginForm.get('email')?.hasError('required') && (loginForm.get('email')?.dirty)" class="validation-message">
+      El correo electrónico es obligatorio.
+    </div>
+    <div *ngIf="loginForm.get('email')?.hasError('pattern') && (loginForm.get('email')?.dirty)" class="validation-message">
+      El formato del correo electrónico no es válido.
+    </div>
+  
+    <ion-item [class.invalid]="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty)">
+      <ion-label position="floating"> Contraseña </ion-label>
+      <ion-input
+        formControlName="password"
+        type="password"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.dirty)" class="validation-message">
+      La contraseña es obligatoria.
+    </div>
+    <div *ngIf="loginForm.get('password')?.hasError('minlength') && (loginForm.get('password')?.dirty)" class="validation-message">
+      La contraseña debe tener al menos 8 caracteres.
+    </div>
+    <div *ngIf="loginForm.get('password')?.hasError('maxlength') && (loginForm.get('password')?.dirty)" class="validation-message">
+      La contraseña no debe exceder los 20 caracteres.
+    </div>
+    <!-- Agrega más mensajes según tus necesidades -->
+
+    <div class="ion-text-center"> <!-- Centro horizontalmente -->
+      <ion-button
+        size="medium"
+        type="submit"
+        [disabled]="!loginForm.valid"
+        color="primary"
+        shape="round"
+        fill="solid"
+      > Continuar </ion-button>
+    </div>
 
   </form>
   <div class="validation-message">
-    {{loginMessage}}
+    {{ loginMessage }}
   </div>
 </ion-content>

@@ -12,6 +12,8 @@ swiper-container {
   }
   
   p{
+  padding: 5px;
+  font-size: 14px;
   font-family:Verdana;
   color: #7f828a;
   text-align: center;
@@ -61,14 +63,14 @@ swiper-container {
     color: rgb(255, 255, 255);
     
     position:absolute;
-    top: 130vw;
-    width: 70vw;
-    font-size: 16px;
+    top: 145vw;
+    width: 50vw;
+    
     
 }
 .texto_ayuda{
   position:absolute;
-  top: 140vw;
+  top: 160vw;
   font-family:Verdana;
   color: #7f828a;
   text-align: center;

@@ -46,7 +46,7 @@ export class IntroPage{
          console.log("Ya esta viendo");
         this.router.navigateByUrl('/intro');
       } else {
-         console.log("Aun no has visto la intro");
+         console.log("Mira antes la intro para ir al home");
       }
     }
   

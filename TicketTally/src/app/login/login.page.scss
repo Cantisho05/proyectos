@@ -1,24 +1,27 @@
 ion-content {
-    --background: #000000; /* Fondo blanco */
+    --background: #ffffff; /* Fondo blanco */
   }
-  
-  ion-avatar.center-avatar {
-    margin: auto;
-  }
-  
+    
   .logo {
-    width: 150px; /* Ajusta el tamaño según sea necesario */
-    height: 150px; /* Ajusta el tamaño según sea necesario */
+
+    width: 300px; /* Ajusta el tamaño según sea necesario */
+    height: 300px; /* Ajusta el tamaño según sea necesario */
+
   }
   
   ion-item {
-    padding: 10px;
-    --border-radius: 35px;
+
+    --background:#2c7efe;
+    padding: 5px;
+    --border-radius: 40px;
+
   }
   
   ion-button {
+    
     padding: 10px;
     margin-top: 5px;
+
   }
   
 .validation-message{
