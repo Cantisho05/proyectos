@@ -43,6 +43,7 @@ export class LoginPage implements OnInit {
     // Utiliza el NavController para navegar a la ruta "/register"
     this.navCtrl.navigateForward('/register');
   }
+  
 
   login(loginData: any) {
     console.log(loginData);
