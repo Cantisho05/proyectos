@@ -2,14 +2,16 @@
 </ion-header>
 
 <ion-content>
+  
   <figure class="ion-text-center">
     <img src="../../assets/imagenes/User.png" alt="logo" class="logo">
   </figure>
-
+  <h1> Iniciar sesión </h1>
   <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
 
     <ion-item [class.invalid]="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty)">
-      <ion-label position="floating"> Correo Electronico </ion-label>
+      <ion-label position="floating"> Correo electrónico </ion-label>
+      
       <ion-input
         placeholder="email@ejemplo.com"
         formControlName="email"
@@ -46,7 +48,7 @@
         size="medium"
         type="submit"
         [disabled]="!loginForm.valid"
-        color="primary"
+        
         shape="round"
         fill="solid"
       > Continuar </ion-button>
@@ -55,5 +57,13 @@
   </form>
   <div class="validation-message">
     {{ loginMessage }}
+  </div>
+
+<div class="ion-text-centerr">
+    <p> ¿No tienes una cuenta? </p>
+    <p>  </p>
+    <a (click)="redirectToRegister()">
+      <p class="p1"> Regístrate </p>
+    </a>
   </div>
 </ion-content>

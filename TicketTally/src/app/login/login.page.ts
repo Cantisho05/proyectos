@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,8 @@ export class LoginPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private storage: Storage
   ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])),
@@ -37,10 +39,16 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
+  redirectToRegister() {
+    // Utiliza el NavController para navegar a la ruta "/register"
+    this.navCtrl.navigateForward('/register');
+  }
+
   login(loginData: any) {
     console.log(loginData);
     this.authService.loginUser(loginData).then(res => {
       // Considera si necesitas realizar acciones adicionales aquí después del inicio de sesión exitoso
+     this.storage.set('userLoggedIn', true);
       this.navCtrl.navigateForward('/home');
     }).catch(err => {
       // Mejora la gestión de errores en tu servicio AuthService

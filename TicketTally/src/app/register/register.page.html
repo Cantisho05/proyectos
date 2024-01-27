@@ -1,0 +1,38 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <figure class="ion-text-center">
+      <img src="../../assets/imagenes/User.png" alt="logo" class="logo">
+    </figure>
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="Nommbre" formControlName="name"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+    </ion-item> 
+    <!-- Colocar campos de password como tipo password -->
+    <ion-item>
+      <ion-input label="Contraseña" labelPlacement="floating" placeholder="Contraseña" formControlName="password"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-input label="Confirme Contraseña" labelPlacement="floating" placeholder="Confirme Contraseña" formControlName="confirmation_password"></ion-input>
+    </ion-item>   
+
+    <div class="ion-text-center"> <!-- Centro horizontalmente -->
+      <ion-button
+        size="medium"
+        type="submit"
+        color="primary"
+        shape="round"
+        fill="solid"
+      > Registrarse </ion-button>
+    </div>
+
+  </form>
+</ion-content>
