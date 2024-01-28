@@ -12,47 +12,72 @@ export class RegisterPage implements OnInit {
   registerForm: FormGroup;
   registrationSuccess = false;
   validationMessages = {
+
+    // mensajes de Email
     email: [
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Enter a valid email address.' }
+      { type: 'required',
+       message: 'Email es requerido.' },
+      { type: 'pattern',
+       message: 'Ingresa un correo electronico valido.' }
     ],
+    // mensajes de CONTRASEÑA
     password: [
-      { type: 'required', message: 'Password is required.' }
-      // Add more password validation messages as needed
+      { type: 'required',
+       message: 'La contraseña es requerida.' }
+      
     ],
+    // mensajes de confirmacion de contraseña 
     confirmation_password: [
-      { type: 'required', message: 'Confirmation password is required.' },
-      { type: 'passwordMismatch', message: 'Passwords do not match.' }
+      { type: 'required', 
+      message: 'La confirmacio de contraseña es requerida.' },
+      { type: 'passwordMismatch',
+       message: 'Las contraseñas no son iguales.' }
     ],
+    // mensajes de Nombre
     name: [
-      { type: 'required', message: 'Name is required.' }
+      { type: 'required',
+       message: 'Nombre es requerido.' }
     ],
+    // mensajes de apellido
     last_name: [
-      { type: 'required', message: 'Last name is required.' }
+      { type: 'required',
+       message: 'Apellido es requerido.' }
     ]
   };
+
+  // Constructor 
   constructor(
     private formBuilder: FormBuilder,
     private navCtrl: NavController,
     private storage: Storage
   ) {
+
+    // Aqui se encuntran las validaciones
     this.registerForm = this.formBuilder.group({
-      email: new FormControl("", Validators.compose([
+      email: new FormControl("", 
+        Validators.compose([
         Validators.required,
         Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
       ])),
-      password: new FormControl("", Validators.compose([
+      // CONTRASEÑA
+      password: new FormControl("", 
+        Validators.compose([
         Validators.required,
-        // Add more password validations as needed
+        
       ])),
-      confirmation_password: new FormControl("", Validators.compose([
+      // CONFIRMACION DE CONTRASEÑA
+      confirmation_password: new FormControl("", 
+        Validators.compose([
         Validators.required,
-        // Add more password validations as needed
+        
       ])),
-      name: new FormControl("", Validators.compose([
+      // NOMBRE
+      name: new FormControl("", 
+        Validators.compose([
         Validators.required
       ])),
-      last_name: new FormControl("", Validators.compose([
+      last_name: new FormControl("", 
+        Validators.compose([
         Validators.required
       ]))
     }, { validators: this.passwordMatchValidator });
@@ -61,26 +86,22 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
+    // Redirecionar al login
   redirectToLogin() {
     this.navCtrl.navigateForward('/login');
   }
 
   register(register_data: any) {
-    // Implementa tu servicio de registro aquí
     console.log(register_data);
-    
-    // Ejemplo: Guardar datos en el almacenamiento
     this.storage.set('user_data', register_data);
-    
-    // Actualizar la propiedad registrationSuccess
     this.registrationSuccess = true;
   }
 
-  // Custom validator for password matching
-  // Validador personalizado para la coincidencia de contraseñas
+  
+    // Valida las coincidencia de contraseñas
 passwordMatchValidator(group: FormGroup) {
-  const password = group.get('password')!.value; // Usa ! para afirmar que no será nulo
-  const confirmationPassword = group.get('confirmation_password')!.value; // Usa ! para afirmar que no será nulo
+  const password = group.get('password')!.value;
+  const confirmationPassword = group.get('confirmation_password')!.value; 
   return password === confirmationPassword ? null : { passwordMismatch: true };
 }
 

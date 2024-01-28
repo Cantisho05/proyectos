@@ -1,10 +1,10 @@
 ion-content {
-    --background: #ffffff; /* Fondo blanco */
+  --background: #ffffff;
   }
     
   h1{
-    color:#39425c;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color:#39425c;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   text-align: center;
   }
@@ -19,8 +19,8 @@ ion-content {
 
   .logo {
     
-    width: 300px; /* Ajusta el tamaño según sea necesario */
-    height: 300px; /* Ajusta el tamaño según sea necesario */
+    width: 200px; 
+    height: 200px; 
 
   }
   
@@ -46,7 +46,7 @@ ion-content {
   }
   
 .validation-message{
-  font-weight: bold;
+ 
   text-align: center;
   color: red;
   font-size: 14px;

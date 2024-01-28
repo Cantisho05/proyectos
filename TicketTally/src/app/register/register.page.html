@@ -1,52 +1,95 @@
-<ion-header>
-</ion-header>
+<ion-header></ion-header>
 
 <ion-content>
   <ion-content>
     <figure class="ion-text-center">
-      <img src="../../assets/imagenes/Login1.png" alt="logo" class="logo">
+      <img src="../../assets/imagenes/Login1.png" 
+      alt="logo" 
+      class="logo">
     </figure>
+
     <h1> Registro </h1>
 
     <div class="ion-text-centerr">
       <p> ¿Ya tienes cuenta? </p>
       <a (click)="redirectToLogin()">
-        <p class="p1"> Ingresar </p>
+      <p class="p1"> Ingresar </p>
       </a>
     </div>
     
-    <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)"> 
+    <form [formGroup]="registerForm" 
+    (ngSubmit)="register(registerForm.value)"> 
       
+    
       <ion-item>
-        <ion-input label="Nombre" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
+      <ion-input 
+      label="Nombre" 
+      labelPlacement="floating" 
+      placeholder="Nombre" 
+      formControlName="name"></ion-input>
       </ion-item>
-      <div *ngIf="registerForm.get('name')?.hasError('required') && (registerForm.get('name')?.touched || registerForm.get('name')?.dirty)" class="validation-message">
-        Nombre es requerido.
+
+
+      <div *ngIf="registerForm.get('name')?.hasError('required') 
+      && (registerForm.get('name')?.touched 
+      || registerForm.get('name')?.dirty)" 
+      class="validation-message">
+      Nombre es requerido.
       </div>
 
       <ion-item>
-        <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+      <ion-input 
+      label="Apellido" 
+      labelPlacement="floating" 
+      placeholder="Apellido" 
+      formControlName="last_name">
+      </ion-input>
       </ion-item>
-      <div *ngIf="registerForm.get('last_name')?.hasError('required') && (registerForm.get('last_name')?.touched || registerForm.get('last_name')?.dirty)" class="validation-message">
-        Apellido es requerido.
+
+
+      <div *ngIf="registerForm.get('last_name')?.hasError('required') 
+      && (registerForm.get('last_name')?.touched 
+      || registerForm.get('last_name')?.dirty)" 
+      class="validation-message">
+      Apellido es requerido.
       </div>
 
       <ion-item>
-        <ion-input label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+      <ion-input label="Email" 
+      labelPlacement="floating" 
+      placeholder="Email" 
+      formControlName="email"></ion-input>
       </ion-item>
-      <div *ngIf="registerForm.get('email')?.hasError('required') && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)" class="validation-message">
-        Email es requerido.
+
+      <div *ngIf="registerForm.get('email')?.hasError('required') 
+      && (registerForm.get('email')?.touched 
+      || registerForm.get('email')?.dirty)" 
+      class="validation-message">
+      Email es requerido.
       </div>
-      <div *ngIf="registerForm.get('email')?.hasError('pattern') && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)" class="validation-message">
-        Ingrese un email válido.
+
+      <div *ngIf="registerForm.get('email')?.hasError('pattern') 
+      && (registerForm.get('email')?.touched 
+      || registerForm.get('email')?.dirty)" 
+      class="validation-message">
+      Ingrese un email válido.
       </div>
 
       <ion-item>
-        <ion-input  formControlName="password"
-        type="password" label="Contraseña" labelPlacement="floating" placeholder="Contraseña" formControlName="password"></ion-input>
+      <ion-input  
+      formControlName="password"
+      type="password" 
+      label="Contraseña" 
+      labelPlacement="floating" 
+      placeholder="Contraseña" 
+      formControlName="password"></ion-input>
       </ion-item>
-      <div *ngIf="registerForm.get('password')?.hasError('required') && (registerForm.get('password')?.touched || registerForm.get('password')?.dirty)" class="validation-message">
-        Contraseña es requerida.
+
+      <div *ngIf="registerForm.get('password')?.hasError('required') 
+      && (registerForm.get('password')?.touched 
+      || registerForm.get('password')?.dirty)" 
+      class="validation-message">
+      Contraseña es requerida.
       </div>
       
 
@@ -59,14 +102,27 @@
         placeholder="Confirme Contraseña" 
         formControlName="confirmation_password"></ion-input>
       </ion-item>
-      <div *ngIf="registerForm.get('confirmation_password')?.hasError('required') && (registerForm.get('confirmation_password')?.touched || registerForm.get('confirmation_password')?.dirty)" class="validation-message">
-        Confirmación de contraseña es requerida.
-      </div>
-      <div *ngIf="registerForm.hasError('passwordMismatch') && (registerForm.get('confirmation_password')?.touched || registerForm.get('confirmation_password')?.dirty)" class="validation-message">
-        Las contraseñas no coinciden.
+
+
+      <div *ngIf="registerForm.get('confirmation_password')?.hasError('required') 
+      && (registerForm.get('confirmation_password')?.touched 
+      || registerForm.get('confirmation_password')?.dirty)" 
+      class="validation-message">
+      Confirmación de contraseña es requerida.
       </div>
 
-      <div class="ion-text-center"> <!-- Centro horizontalmente -->
+      <div *ngIf="registerForm.hasError('passwordMismatch') 
+      && (registerForm.get('confirmation_password')?.touched 
+      || registerForm.get('confirmation_password')?.dirty)"
+      class="validation-message">
+      Las contraseñas no coinciden.
+      </div>
+
+      <div *ngIf="registrationSuccess" class="success-message">
+      ¡Registro exitoso!
+      </div>
+
+      <div class="ion-text-center"> 
         <ion-button
           size="medium"
           type="submit"
@@ -75,10 +131,6 @@
           shape="round"
           fill="solid"
         > Registrarse </ion-button>
-      </div>
-
-      <div *ngIf="registrationSuccess" class="success-message">
-        ¡Registro exitoso! Tus datos se han registrado correctamente.
       </div>
 
     </form>
