@@ -23,15 +23,17 @@ export class RegisterPage implements OnInit {
     // mensajes de CONTRASEÑA
     password: [
       { type: 'required',
-       message: 'La contraseña es requerida.' }
+      message: 'La contraseña es requerida.' },
+      { type: 'minlength', message: 'La contraseña debe tener al menos 8 caracteres.' },
+      { type: 'maxlength', message: 'La contraseña no debe exceder los 20 caracteres.' },
       
     ],
     // mensajes de confirmacion de contraseña 
     confirmation_password: [
-      { type: 'required', 
-      message: 'La confirmacio de contraseña es requerida.' },
-      { type: 'passwordMismatch',
-       message: 'Las contraseñas no son iguales.' }
+      { type: 'required', message: 'La confirmacio de contraseña es requerida.' },
+      { type: 'passwordMismatch', message: 'Las contraseñas no son iguales.' },
+       { type: 'minlength', message: 'La contraseña debe tener al menos 8 caracteres.' },
+      { type: 'maxlength', message: 'La contraseña no debe exceder los 20 caracteres.' },
     ],
     // mensajes de Nombre
     name: [
@@ -63,12 +65,16 @@ export class RegisterPage implements OnInit {
       password: new FormControl("", 
         Validators.compose([
         Validators.required,
+        Validators.minLength(8), 
+        Validators.maxLength(20),
         
       ])),
       // CONFIRMACION DE CONTRASEÑA
       confirmation_password: new FormControl("", 
         Validators.compose([
         Validators.required,
+        Validators.minLength(8), 
+        Validators.maxLength(20)
         
       ])),
       // NOMBRE

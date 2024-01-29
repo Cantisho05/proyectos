@@ -91,6 +91,16 @@
       class="validation-message">
       Contraseña es requerida.
       </div>
+
+      <div *ngIf="registerForm.get('password')?.hasError('minlength') 
+      && (registerForm.get('password')?.dirty)" class="validation-message">
+      La contraseña debe tener al menos 8 caracteres.
+      </div>
+      
+      <div *ngIf="registerForm.get('password')?.hasError('maxlength') 
+      && (registerForm.get('password')?.dirty)" class="validation-message">
+      La contraseña no debe exceder los 20 caracteres.
+      </div>
       
 
       <ion-item>
@@ -103,6 +113,7 @@
         formControlName="confirmation_password"></ion-input>
       </ion-item>
 
+      
 
       <div *ngIf="registerForm.get('confirmation_password')?.hasError('required') 
       && (registerForm.get('confirmation_password')?.touched 
@@ -116,6 +127,16 @@
       || registerForm.get('confirmation_password')?.dirty)"
       class="validation-message">
       Las contraseñas no coinciden.
+      </div>
+
+      <div *ngIf="registerForm.get('confirmation_password')?.hasError('minlength') 
+      && (registerForm.get('confirmation_password')?.dirty)" class="validation-message">
+      La contraseña debe tener al menos 8 caracteres.
+    </div>
+
+      <div *ngIf="registerForm.get('confirmation_password')?.hasError('maxlength') 
+      && (registerForm.get('confirmation_password')?.dirty)" class="validation-message">
+      La contraseña no debe exceder los 20 caracteres.
       </div>
 
       <div *ngIf="registrationSuccess" class="success-message">
