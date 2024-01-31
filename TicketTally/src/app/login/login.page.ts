@@ -53,7 +53,7 @@ export class LoginPage implements OnInit {
     console.log(loginData);
     this.authService.loginUser(loginData).then(res => {
     this.storage.set('userLoggedIn', true);
-    this.navCtrl.navigateForward('/home');
+    this.navCtrl.navigateForward('/menu/home');
     })
   .catch(err => {
     this.loginMessage = 'Error al iniciar sesión. Verifica tus datos.';

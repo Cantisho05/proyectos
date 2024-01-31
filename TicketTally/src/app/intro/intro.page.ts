@@ -52,7 +52,7 @@ export class IntroPage{
   
     async marcarIntroComoVista() {
       await this.storage.set('mostreLaIntro', true);
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/login');
     }
   
     iralHome(){

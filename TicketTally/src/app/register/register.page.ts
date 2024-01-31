@@ -111,4 +111,7 @@ passwordMatchValidator(group: FormGroup) {
   return password === confirmationPassword ? null : { passwordMismatch: true };
 }
 
+goToLogin(){
+  this.navCtrl.navigateBack("/login");
+}
 }
