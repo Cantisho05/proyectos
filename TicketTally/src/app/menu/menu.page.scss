@@ -1,0 +1,24 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ion-content,  ion-toolbar{
+    --background:#39425c;
+    color: #ffffff;
+  }
+
+  ion-menu-button{
+    color: #ffffff;
+  }
+
+  ion-icon{
+    color: #ffffff;
+    margin: 10px;
+  }
+  ion-item{
+    --background:#39425c;
+    color: rgb(255, 255, 255);
+  }

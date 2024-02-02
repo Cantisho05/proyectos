@@ -13,15 +13,15 @@ export class IntroPage{
     {
       title: "¡BIEVENIDO A TicketTally!",
       image: "../../assets/imagenes/Imagen1.jpg",
-      description: "Encuentra tu proximo destino y descubre las mejores ofertas. ",
+      description: "¡Compra tus boletos ahora y vive experiencias inolvidables que te inspirarán a alcanzar tus sueños! ",
       texto_ayuda: "Desliza para continuar.",
       class: "slide-1"
     },
 
     {
-      title: " VUELOS A UN TAP! ",
+      title: " BOLETOS A UN TAP! ",
       image: "../../assets/imagenes/Imagen2.jpg",
-      description:"Explora nuevos horizontes con nuestros vuelos a un toque de distancia. Descubre experiencias únicas y destinos fascinantes con tan solo un clic." ,
+      description:"Transforma momentos en recuerdos, reserva tu entrada hoy" ,
       texto_ayuda: "Desliza para continuar",
       class: "slide-2"
     },
@@ -29,7 +29,7 @@ export class IntroPage{
     {
       title: " ¡COMENCEMOS! ",
       image: "../../assets/imagenes/imagen3.jpg",
-      description: " ¡Haz clic aquí para conocer más y comienza tu próxima aventura ahora mismo! ",
+      description: " La vida es un escenario, asegúrate de tener los mejores asientos. ¡Compra tus boletos y sé el protagonista de tu propia historia! ",
       class: "slide-3"
     }
   ]

@@ -5,18 +5,26 @@ import * as dataEvents from "./events.json";
   providedIn: 'root'
 })
 export class EventsService {
-  urlServer =" http://190.131.209.106";
+  urlServer = "http://190.131.209.106";
+
   constructor() { }
 
-  getEvents(){
-    return fetch(`${this.urlServer}/events`).then(
-      response => response.json()
-    )
+  getEvents() {
+    return fetch(`${this.urlServer}/events`)
+      .then(response => response.json());
   }
 
-  getLocalEvents(){
+  getLocalEvents() {
     return dataEvents;
   }
-  //Obtener categorias " get hacia /categories "
-  //Obtener 1 categoria " get hacia /categories/:id"
+
+  getCategories() {
+    return fetch(`${this.urlServer}/categories`)
+      .then(response => response.json());
+  }
+
+  getCategoryById(id: number) {
+    return fetch(`${this.urlServer}/categories/${id}`)
+      .then(response => response.json());
+  }
 }
