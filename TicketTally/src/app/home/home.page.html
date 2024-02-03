@@ -28,4 +28,13 @@
         </swiper-slide>
     </swiper-container>
 
+        <ion-list class="listaEvento" *ngFor="let slide of event_list">
+            <ion-item>
+                <ion-label>
+                    <h3>{{slide.name}}</h3>
+                    <p>{{slide.description}}</p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    
 </ion-content>
