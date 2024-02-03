@@ -5,20 +5,25 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
     </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+    <!-- TITULO -->
 <div class="categoria-titulo">CATEGORIA</div>
-<ion-list>
-    <ion-item *ngFor="let category of categories" class="custom-item">
-        {{ category.name }}
-    </ion-item>
-</ion-list>
+
+<!-- Mostrando las categorias en forma de lista -->
+    <ion-list>
+        <ion-item *ngFor="let category of categories" class="custom-item">
+            {{ category.name }}
+        </ion-item>
+    </ion-list>
+
+<!-- Este es el slider de imagenes -->
     <swiper-container
     [pagination]="true"
     [slidesPerView]="2"
-    >
-        <swiper-slide *ngFor="let slide of event_list">
+    >   <swiper-slide *ngFor="let slide of event_list">
             <img src="{{slide.image}}">
         </swiper-slide>
     </swiper-container>
